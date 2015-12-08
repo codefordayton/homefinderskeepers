@@ -1,4 +1,4 @@
-# homefinderskeepers
+# Home Finders Keepers
 This is a Generic Web application to streamline finding and researching homes you're interested in purchasing.
 
 Installation
