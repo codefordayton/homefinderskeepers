@@ -1,5 +1,5 @@
 {
-  "name": "daytonreap",
+  "name": "homefinderskeepers",
   "routes": { "**": "app/index.html" },
   "exclude": [".htaccess",
               ".sass-cache",
