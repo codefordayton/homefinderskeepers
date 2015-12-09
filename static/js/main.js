@@ -255,7 +255,6 @@ $("document").ready(function() {
        var faqs = texts.faq;
        $(".FAQcontainer").empty();
        for(var i = 0; i < faqs.length; i++){
-         console.log(faqs[i]);
          var template = $('<div id="FAQ-q' + i + '" class="FAQ-item"><h4><span class="expand-icon">+</span> </h4><div id="FAQ-q' + i + '-expand" class="FAQ-expand"><p class="ans"></p></div></div>');
          template.find('.expand-icon').after(faqs[i].question);
          template.find('.ans').html(faqs[i].answer);
