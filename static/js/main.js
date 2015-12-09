@@ -237,12 +237,51 @@ $("document").ready(function() {
     map.addLayer(markers);
   }
   
+  function initText(){
+
+    if(!texts){
+      return;
+    }
+
+    if(texts.title){
+      $(".introcontainer h1").html(texts.title);
+    }
+
+    if(texts.intro){
+       $(".introcontainer .intro-paragraph").html(texts.intro);
+    }
+
+    if(texts.faq && texts.faq.length > 0){
+       var faqs = texts.faq;
+       $(".FAQcontainer").empty();
+       for(var i = 0; i < faqs.length; i++){
+         console.log(faqs[i]);
+         var template = $('<div id="FAQ-q' + i + '" class="FAQ-item"><h4><span class="expand-icon">+</span> </h4><div id="FAQ-q' + i + '-expand" class="FAQ-expand"><p class="ans"></p></div></div>');
+         template.find('.expand-icon').after(faqs[i].question);
+         template.find('.ans').html(faqs[i].answer);
+         $(".FAQcontainer").append(template);
+       }
+    }
+
+    if(texts.link){
+      $(".introcontainer a").remove();
+      var link = $(texts.link);
+      link.addClass("right-image");
+      $(".introcontainer .fineprint").before(link);
+    }
+
+    if(texts.fineprint){
+      $(".introcontainer .fineprint").html(texts.fineprint);
+    }
+    
+  }
+
   function initSite() {
     $('#last_update').text(lastupdated);
   
     createMap();
     initMarkers();
-    
+    initText();
   }
   
   initSite();
